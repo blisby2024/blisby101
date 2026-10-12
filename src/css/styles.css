@@ -1,0 +1,524 @@
+/* ---------- Brand tokens ----------
+   Sampled from the existing Hytco Energy site screenshots.
+   Swap these for exact brand hex values once you have them. */
+:root {
+  --color-red: #d2232a;
+  --color-red-dark: #a91c22;
+  --color-navy: #16253d;
+  --color-gray-dark: #4d4d4d;
+  --color-gray-mid: #6b6b6b;
+  --color-gray-light: #f5f6f7;
+  --color-border: #e3e5e8;
+  --color-text: #2b2b2b;
+  --color-white: #ffffff;
+
+  --font-base: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max-width: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  line-height: 1.6;
+  background: var(--color-white);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-navy);
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.accent { color: var(--color-red); }
+
+.section {
+  padding: 72px 0;
+}
+
+.section-alt {
+  background: var(--color-gray-light);
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-rule {
+  width: 60px;
+  height: 4px;
+  background: var(--color-red);
+  margin: 0 auto 32px;
+}
+
+.section-intro {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+  color: var(--color-gray-mid);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--color-red);
+  color: var(--color-white);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn:hover { background: var(--color-red-dark); }
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-white);
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.logo-hytco { color: var(--color-gray-dark); }
+.logo-energy { color: var(--color-red); }
+
+.logo-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gray-mid);
+  margin-top: 2px;
+}
+
+.primary-nav ul {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.primary-nav a {
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: var(--color-navy);
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.primary-nav a:hover,
+.primary-nav a.active {
+  border-bottom-color: var(--color-red);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background: var(--color-navy);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  background: linear-gradient(180deg, rgba(10, 20, 40, 0.75), rgba(10, 20, 40, 0.55)), var(--color-navy);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-inner {
+  max-width: 900px;
+  padding: 0 24px;
+}
+
+.hero h1 {
+  color: var(--color-white);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin-bottom: 32px;
+}
+
+.hero .btn { margin-top: 16px; }
+
+/* ---------- About teaser ---------- */
+.about-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-teaser .logo-main { font-size: 2.4rem; }
+
+/* ---------- Service / feature cards ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  background: var(--color-gray-light);
+  padding: 24px;
+}
+
+.service-card {
+  background: var(--color-white);
+  text-align: left;
+}
+
+.service-card img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(1) sepia(1) hue-rotate(-50deg) saturate(4);
+}
+
+.service-card .service-card-label {
+  padding: 16px;
+  font-weight: 700;
+  color: var(--color-navy);
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Four-column feature list ---------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.feature-grid .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-red);
+  border-radius: 8px;
+  color: var(--color-red);
+}
+
+.feature-grid h3 { font-size: 1.1rem; }
+.feature-grid p { color: var(--color-gray-mid); font-size: 0.95rem; }
+
+/* ---------- Why choose us ---------- */
+.why-us {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.why-us ul {
+  padding-left: 20px;
+  color: var(--color-gray-mid);
+}
+
+.why-us li { margin-bottom: 8px; }
+
+/* ---------- Benefits (checklist) ---------- */
+.benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.benefit-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.benefit-check {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.benefit-item h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.benefit-item p { color: var(--color-gray-mid); margin: 0; }
+
+/* ---------- Client logos ---------- */
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.client-logos img {
+  max-height: 70px;
+  width: auto;
+}
+
+/* ---------- Testimonials ---------- */
+.testimonials {
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 72px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-quote-mark {
+  font-size: 3rem;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonial-viewport {
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-slide {
+  flex: none;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.testimonial-slide p.quote {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.testimonial-author { font-weight: 700; }
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.testimonial-prev,
+.testimonial-next {
+  background: none;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.testimonial-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.testimonial-dot.is-active { background: var(--color-white); }
+
+/* ---------- FAQ ---------- */
+.faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  cursor: pointer;
+}
+
+.faq-marker {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  background: var(--color-red);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 0 20px 44px;
+  color: var(--color-gray-mid);
+}
+
+.faq-item.is-open .faq-answer { display: block; }
+.faq-item.is-open .faq-marker { background: var(--color-navy); }
+
+/* ---------- Placeholder notice (dev-only content gaps) ---------- */
+.content-placeholder {
+  border: 2px dashed var(--color-red);
+  background: #fff5f5;
+  padding: 24px;
+  border-radius: 6px;
+  color: var(--color-gray-dark);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-navy);
+  color: var(--color-white);
+  padding: 32px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a { opacity: 0.85; }
+.footer-nav a:hover { opacity: 1; text-decoration: underline; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-teaser,
+  .why-us,
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid,
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle { display: flex; }
+
+  .primary-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    display: none;
+  }
+
+  .primary-nav.is-open { display: block; }
+
+  .primary-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 16px;
+  }
+
+  .primary-nav a {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .card-grid,
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}

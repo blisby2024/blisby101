@@ -1,0 +1,31 @@
+---
+title: Contact
+nav: contact
+layout: base.njk
+---
+<section class="hero" style="min-height:280px;">
+  <div class="hero-inner">
+    <h1>Contact <span class="accent">Us</span></h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:48px;">
+    <div>
+      <h2>Get In Touch</h2>
+      <div class="content-placeholder">
+        <strong>Content needed:</strong> I don't have your dad's real phone number, email, physical address, or business hours yet. Send me those (or a screenshot of the Contact page) and I'll replace this placeholder.
+      </div>
+    </div>
+    <div>
+      <h2>Send a Message</h2>
+      <form class="contact-form">
+        <label>Name<br><input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:16px;"></label>
+        <label>Email<br><input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:16px;"></label>
+        <label>Message<br><textarea name="message" rows="5" required style="width:100%; padding:10px; margin-bottom:16px;"></textarea></label>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p style="font-size:0.85rem; color:var(--color-gray-mid); margin-top:12px;">Note: this form isn't wired up to actually send emails yet — once we pick a hosting provider I'll connect it (e.g. Netlify Forms or Formspree) so submissions land in your dad's inbox.</p>
+    </div>
+  </div>
+</section>

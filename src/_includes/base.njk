@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} | Hytco Energy Inc.</title>
+  <meta name="description" content="{{ description or 'Hytco Energy Inc. — Mechanical, Electrical, Plumbing & Fire Protection engineering services for commercial and industrial projects in Toronto.' }}">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">
+        <span class="logo-main"><span class="logo-hytco">HYTCO</span> <span class="logo-energy">ENERGY</span></span>
+        <span class="logo-sub">ENGINEERING SOLUTIONS</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav">
+        <ul>
+          <li><a href="/"{% if nav == 'home' %} class="active" aria-current="page"{% endif %}>Home</a></li>
+          <li><a href="/about/"{% if nav == 'about' %} class="active" aria-current="page"{% endif %}>About Us</a></li>
+          <li><a href="/services/"{% if nav == 'services' %} class="active" aria-current="page"{% endif %}>Services</a></li>
+          <li><a href="/sectors/"{% if nav == 'sectors' %} class="active" aria-current="page"{% endif %}>Sectors</a></li>
+          <li><a href="/projects/"{% if nav == 'projects' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+          <li><a href="/contact/"{% if nav == 'contact' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; {{ currentYear }} Hytco Energy Inc. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/">Home</a>
+        <a href="/about/">About Us</a>
+        <a href="/services/">Services</a>
+        <a href="/sectors/">Sectors</a>
+        <a href="/projects/">Projects</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
