@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | Hytco Energy Inc.</title>
-  <meta name="description" content="{{ description or 'Hytco Energy Inc. — Mechanical, Electrical, Plumbing & Fire Protection engineering services for commercial and industrial projects in Toronto.' }}">
+  <meta name="description" content="{{ description or 'Hytco Energy Inc. — Mechanical, Electrical, Plumbing, Fire Protection & Peer Review engineering services for commercial and industrial projects in the Greater Toronto Area.' }}">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -23,9 +23,35 @@
         <ul>
           <li><a href="/"{% if nav == 'home' %} class="active" aria-current="page"{% endif %}>Home</a></li>
           <li><a href="/about/"{% if nav == 'about' %} class="active" aria-current="page"{% endif %}>About Us</a></li>
-          <li><a href="/services/"{% if nav == 'services' %} class="active" aria-current="page"{% endif %}>Services</a></li>
-          <li><a href="/sectors/"{% if nav == 'sectors' %} class="active" aria-current="page"{% endif %}>Sectors</a></li>
-          <li><a href="/projects/"{% if nav == 'projects' %} class="active" aria-current="page"{% endif %}>Projects</a></li>
+          <li class="has-dropdown">
+            <a href="/services/"{% if nav == 'services' %} class="active" aria-current="page"{% endif %}>Services</a>
+            <ul class="dropdown">
+              <li><a href="/services/mechanical/">Mechanical</a></li>
+              <li><a href="/services/electrical/">Electrical</a></li>
+              <li><a href="/services/plumbing/">Plumbing</a></li>
+              <li><a href="/services/fire-protection/">Fire Protection</a></li>
+              <li><a href="/services/peer-review/">Peer Review</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="/sectors/"{% if nav == 'sectors' %} class="active" aria-current="page"{% endif %}>Sectors</a>
+            <ul class="dropdown">
+              <li><a href="/sectors/residential/">Residential</a></li>
+              <li><a href="/sectors/commercial/">Commercial</a></li>
+              <li><a href="/sectors/industrial/">Industrial</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="/projects/"{% if nav == 'projects' %} class="active" aria-current="page"{% endif %}>Projects</a>
+            <ul class="dropdown">
+              <li><a href="/projects/bm-optical-lab/">BM Optical Lab Ltd.</a></li>
+              <li><a href="/projects/sterling-shoe-company/">Sterling Shoe Company</a></li>
+              <li><a href="/projects/ogi-precision/">OGI Precision Inc.</a></li>
+              <li><a href="/projects/redwood-shelter/">Redwood Shelter</a></li>
+              <li><a href="/projects/walmart-distribution-center/">Walmart Distribution Center</a></li>
+              <li><a href="/projects/cn-tower/">CN Tower</a></li>
+            </ul>
+          </li>
           <li><a href="/contact/"{% if nav == 'contact' %} class="active" aria-current="page"{% endif %}>Contact</a></li>
         </ul>
       </nav>
@@ -37,16 +63,31 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container footer-grid">
+      <div>
+        <span class="logo-main"><span class="logo-hytco" style="color:#fff;">HYTCO</span> <span class="logo-energy">ENERGY</span></span>
+        <p class="footer-tagline">Mechanical, electrical, plumbing &amp; fire protection engineering for commercial and industrial projects.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>40 Vogell Road, Unit #14<br>Richmond Hill, ON, L4B 3N6</p>
+        <p><a href="tel:+14168532927">+1 (416) 853-2927</a></p>
+        <p><a href="mailto:info@hytcoe.com">info@hytcoe.com</a></p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <nav class="footer-nav">
+          <a href="/">Home</a>
+          <a href="/about/">About Us</a>
+          <a href="/services/">Services</a>
+          <a href="/sectors/">Sectors</a>
+          <a href="/projects/">Projects</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container footer-bottom">
       <p>&copy; {{ currentYear }} Hytco Energy Inc. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="/">Home</a>
-        <a href="/about/">About Us</a>
-        <a href="/services/">Services</a>
-        <a href="/sectors/">Sectors</a>
-        <a href="/projects/">Projects</a>
-        <a href="/contact/">Contact</a>
-      </nav>
     </div>
   </footer>
 
